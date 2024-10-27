@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Transaccion.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Transaccion.java</font>
+</center></td></tr></table>
+<pre><span class="s0">public class </span><span class="s1">Transaccion </span><span class="s2">{</span>
+    <span class="s3">// Atributos encapsulados</span>
+    <span class="s0">private </span><span class="s1">String idTransaccion</span><span class="s2">;</span>
+    <span class="s0">private double </span><span class="s1">monto</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String metodoPago</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String estado</span><span class="s2">;</span>
+
+    <span class="s3">// Constructor</span>
+    <span class="s0">public </span><span class="s1">Transaccion</span><span class="s2">(</span><span class="s1">String idTransaccion</span><span class="s2">, </span><span class="s0">double </span><span class="s1">monto</span><span class="s2">, </span><span class="s1">String metodoPago</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">idTransaccion </span><span class="s2">= </span><span class="s1">idTransaccion</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">monto </span><span class="s2">= </span><span class="s1">monto</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">metodoPago </span><span class="s2">= </span><span class="s1">metodoPago</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">estado </span><span class="s2">= </span><span class="s4">&quot;Pendiente&quot;</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Métodos getters y setters (Encapsulación)</span>
+    <span class="s0">public </span><span class="s1">String getIdTransaccion</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">idTransaccion</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public double </span><span class="s1">getMonto</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">monto</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setMonto</span><span class="s2">(</span><span class="s0">double </span><span class="s1">monto</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">monto </span><span class="s2">= </span><span class="s1">monto</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String getMetodoPago</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">metodoPago</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setMetodoPago</span><span class="s2">(</span><span class="s1">String metodoPago</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">metodoPago </span><span class="s2">= </span><span class="s1">metodoPago</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String getEstado</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">estado</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setEstado</span><span class="s2">(</span><span class="s1">String estado</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">estado </span><span class="s2">= </span><span class="s1">estado</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Método para confirmar la transacción</span>
+    <span class="s0">public void </span><span class="s1">confirmar</span><span class="s2">() {</span>
+        <span class="s0">if </span><span class="s2">(!</span><span class="s0">this</span><span class="s2">.</span><span class="s1">estado</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s4">&quot;Completada&quot;</span><span class="s2">)) {</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">estado </span><span class="s2">= </span><span class="s4">&quot;Completada&quot;</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Transacción confirmada.&quot;</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;La transacción ya está completada.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Método para cancelar la transacción</span>
+    <span class="s0">public void </span><span class="s1">cancelar</span><span class="s2">() {</span>
+        <span class="s0">if </span><span class="s2">(!</span><span class="s0">this</span><span class="s2">.</span><span class="s1">estado</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s4">&quot;Cancelada&quot;</span><span class="s2">)) {</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">estado </span><span class="s2">= </span><span class="s4">&quot;Cancelada&quot;</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Transacción cancelada.&quot;</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;La transacción ya está cancelada.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

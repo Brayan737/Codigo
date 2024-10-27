@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>SistemaDePago.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+SistemaDePago.java</font>
+</center></td></tr></table>
+<pre><span class="s0">public class </span><span class="s1">SistemaDePago </span><span class="s2">{</span>
+    <span class="s3">// Método polimórfico para procesar pago</span>
+    <span class="s0">public void </span><span class="s1">procesarPago</span><span class="s2">(</span><span class="s1">Transaccion transaccion</span><span class="s2">) {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Procesando pago con método: &quot; </span><span class="s2">+ </span><span class="s1">transaccion</span><span class="s2">.</span><span class="s1">getMetodoPago</span><span class="s2">());</span>
+        <span class="s1">transaccion</span><span class="s2">.</span><span class="s1">confirmar</span><span class="s2">();  </span><span class="s3">// Confirmar la transacción</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Sobrecarga (polimorfismo) de método para transacciones con descuentos</span>
+    <span class="s0">public void </span><span class="s1">procesarPago</span><span class="s2">(</span><span class="s1">Transaccion transaccion</span><span class="s2">, </span><span class="s0">double </span><span class="s1">descuento</span><span class="s2">) {</span>
+        <span class="s0">double </span><span class="s1">montoFinal </span><span class="s2">= </span><span class="s1">transaccion</span><span class="s2">.</span><span class="s1">getMonto</span><span class="s2">() - </span><span class="s1">descuento</span><span class="s2">;</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Procesando pago con descuento. Monto final: &quot; </span><span class="s2">+ </span><span class="s1">montoFinal</span><span class="s2">);</span>
+        <span class="s1">transaccion</span><span class="s2">.</span><span class="s1">confirmar</span><span class="s2">();  </span><span class="s3">// Confirmar la transacción</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
