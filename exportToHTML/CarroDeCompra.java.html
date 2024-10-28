@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>CarroDeCompra.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CarroDeCompra.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">ArrayList</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">CarroDeCompra </span><span class="s0">extends </span><span class="s1">Transaccion </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">ArrayList</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">productos</span><span class="s2">;  </span><span class="s3">// Lista de productos</span>
+
+    <span class="s3">// Constructor</span>
+    <span class="s0">public </span><span class="s1">CarroDeCompra</span><span class="s2">(</span><span class="s1">String idTransaccion</span><span class="s2">, </span><span class="s0">double </span><span class="s1">monto</span><span class="s2">, </span><span class="s1">String metodoPago</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">(</span><span class="s1">idTransaccion</span><span class="s2">, </span><span class="s1">monto</span><span class="s2">, </span><span class="s1">metodoPago</span><span class="s2">);  </span><span class="s3">// Herencia de Transaccion</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">productos </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Método para añadir un producto</span>
+    <span class="s0">public void </span><span class="s1">agregarProducto</span><span class="s2">(</span><span class="s1">String producto</span><span class="s2">) {</span>
+        <span class="s1">productos</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">producto</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Producto &quot; </span><span class="s2">+ </span><span class="s1">producto </span><span class="s2">+ </span><span class="s4">&quot; agregado al carro.&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Método para eliminar un producto</span>
+    <span class="s0">public void </span><span class="s1">eliminarProducto</span><span class="s2">(</span><span class="s1">String producto</span><span class="s2">) {</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">productos</span><span class="s2">.</span><span class="s1">contains</span><span class="s2">(</span><span class="s1">producto</span><span class="s2">)) {</span>
+            <span class="s1">productos</span><span class="s2">.</span><span class="s1">remove</span><span class="s2">(</span><span class="s1">producto</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Producto &quot; </span><span class="s2">+ </span><span class="s1">producto </span><span class="s2">+ </span><span class="s4">&quot; eliminado del carro.&quot;</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Producto no encontrado en el carro.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Método para vaciar el carrito</span>
+    <span class="s0">public void </span><span class="s1">vaciarCarrito</span><span class="s2">() {</span>
+        <span class="s1">productos</span><span class="s2">.</span><span class="s1">clear</span><span class="s2">();</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Carrito vaciado.&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Método para mostrar el contenido del carro</span>
+    <span class="s0">public void </span><span class="s1">mostrarContenido</span><span class="s2">() {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Productos en el carro:&quot;</span><span class="s2">);</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s1">String producto </span><span class="s2">: </span><span class="s1">productos</span><span class="s2">) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;- &quot; </span><span class="s2">+ </span><span class="s1">producto</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
