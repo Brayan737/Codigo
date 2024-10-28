@@ -64,7 +64,8 @@ public class Dlc extends Videojuego {
     public void mostrarInfo() {
         System.out.println("DLC: " + this.nombreDlc + " para el juego " + this.nombre + ", Precio: " + this.precio);
     }
-    public void proveerDLC(int idBiblioteca){
-        System.out.println("Este método permite que la biblioteca de id " + idBbiblioteca + " tenga disponible el dlc " +this.nombre + "del videojuego con nombre " + this.nombre);
+    public void proveerDLC(int idBiblioteca) {
+        System.out.println("Este método permite que la biblioteca de id " + idBiblioteca + " tenga disponible el DLC " + this.nombreDlc + " del videojuego con nombre " + this.getNombre());
     }
+
 }
